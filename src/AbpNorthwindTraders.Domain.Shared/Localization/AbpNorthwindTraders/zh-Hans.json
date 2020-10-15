@@ -1,8 +1,39 @@
 {
-    "culture": "zh-Hans",
-    "texts": {
-      "Menu:Home": "首页",
-      "Welcome": "欢迎",
-      "LongWelcomeMessage": "欢迎来到该应用程序. 这是一个基于ABP框架的启动项目. 有关更多信息, 请访问 abp.io."
-    }
+  "culture": "zh-Hans",
+  "texts": {
+    "Menu:Home": "首页",
+    "Welcome": "欢迎",
+    "LongWelcomeMessage": "欢迎来到该应用程序. 这是一个基于ABP框架的启动项目. 有关更多信息, 请访问 abp.io.",
+    "Permission:Employee": "Employee",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:Employee": "MenuEmployee",
+    "Employee": "Employee",
+    "EmployeeLastName": "EmployeeLastName",
+    "EmployeeFirstName": "EmployeeFirstName",
+    "EmployeeTitle": "EmployeeTitle",
+    "EmployeeTitleOfCourtesy": "EmployeeTitleOfCourtesy",
+    "EmployeeBirthDate": "EmployeeBirthDate",
+    "EmployeeHireDate": "EmployeeHireDate",
+    "EmployeeAddress": "EmployeeAddress",
+    "EmployeeCity": "EmployeeCity",
+    "EmployeeRegion": "EmployeeRegion",
+    "EmployeePostalCode": "EmployeePostalCode",
+    "EmployeeCountry": "EmployeeCountry",
+    "EmployeeHomePhone": "EmployeeHomePhone",
+    "EmployeeExtension": "EmployeeExtension",
+    "EmployeePhoto": "EmployeePhoto",
+    "EmployeeNotes": "EmployeeNotes",
+    "EmployeeReportsTo": "EmployeeReportsTo",
+    "EmployeePhotoPath": "EmployeePhotoPath",
+    "EmployeeManager": "EmployeeManager",
+    "EmployeeEmployeeTerritories": "EmployeeEmployeeTerritories",
+    "EmployeeDirectReports": "EmployeeDirectReports",
+    "EmployeeOrders": "EmployeeOrders",
+    "CreateEmployee": "CreateEmployee",
+    "EditEmployee": "EditEmployee",
+    "EmployeeDeletionConfirmationMessage": "Are you sure to delete the employee {0}?",
+    "SuccessfullyDeleted": "Successfully deleted"
   }
+}

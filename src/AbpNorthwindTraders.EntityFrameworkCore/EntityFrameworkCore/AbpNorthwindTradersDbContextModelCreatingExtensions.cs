@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+using AbpNorthwindTraders.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace AbpNorthwindTraders.EntityFrameworkCore
 {
@@ -17,6 +19,16 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
             //    b.ConfigureByConvention(); //auto configure for the base class props
             //    //...
             //});
+
+
+            builder.Entity<Employee>(b =>
+            {
+                b.ToTable(AbpNorthwindTradersConsts.DbTablePrefix + "Employees", AbpNorthwindTradersConsts.DbSchema);
+                b.ConfigureByConvention(); 
+                
+
+                /* Configure more properties here */
+            });
         }
     }
 }

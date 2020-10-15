@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using AbpNorthwindTraders.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Identity;
 using Volo.Abp.Users.EntityFrameworkCore;
+using AbpNorthwindTraders.Domain.Models;
 
 namespace AbpNorthwindTraders.EntityFrameworkCore
 {
@@ -25,6 +26,7 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside AbpNorthwindTradersDbContextModelCreatingExtensions.ConfigureAbpNorthwindTraders
          */
+        public DbSet<Employee> Employees { get; set; }
 
         public AbpNorthwindTradersDbContext(DbContextOptions<AbpNorthwindTradersDbContext> options)
             : base(options)
