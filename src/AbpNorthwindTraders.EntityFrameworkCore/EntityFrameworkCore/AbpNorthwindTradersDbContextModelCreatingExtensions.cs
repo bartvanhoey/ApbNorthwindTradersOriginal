@@ -130,6 +130,21 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
         b.Property(e => e.Description).HasColumnType("ntext");
         b.Property(e => e.Picture).HasColumnType("image");
       });
+
+      builder.Entity<Product>(b =>
+      {
+        b.ToTable(AbpNorthwindTradersConsts.DbTablePrefix + "Products", AbpNorthwindTradersConsts.DbSchema);
+        b.ConfigureByConvention();
+        b.Property(e => e.Id).HasColumnName("ProductID");
+        b.Property(e => e.CategoryId).HasColumnName("CategoryID");
+        b.Property(e => e.ProductName).IsRequired().HasMaxLength(ProductConsts.MaxLengthProductName);
+        b.Property(e => e.QuantityPerUnit).HasMaxLength(ProductConsts.MaxLengthQuantityPerUnit);
+        b.Property(e => e.ReorderLevel).HasDefaultValueSql("((0))");
+        b.Property(e => e.SupplierId).HasColumnName("SupplierID");
+        b.Property(e => e.UnitPrice).HasColumnType("money").HasDefaultValueSql("((0))");
+        b.Property(e => e.UnitsInStock).HasDefaultValueSql("((0))");
+        b.Property(e => e.UnitsOnOrder).HasDefaultValueSql("((0))");
+      });
     }
   }
 }

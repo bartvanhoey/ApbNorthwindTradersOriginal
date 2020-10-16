@@ -6,7 +6,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
   {
     public static readonly Dictionary<int, Supplier> Suppliers = new Dictionary<int, Supplier>();
 
-    public static void AddSuppliers()
+    public static Dictionary<int, Supplier> AddSuppliers()
     {
       Suppliers.Add(1,
           new Supplier
@@ -397,6 +397,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(514) 555-2955",
             HomePage = ""
           });
+      return Suppliers;
     }
+
   }
 }

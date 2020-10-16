@@ -95,6 +95,23 @@
     "CategoryPicture": "CategoryPicture",
     "CreateCategory": "CreateCategory",
     "EditCategory": "EditCategory",
-    "CategoryDeletionConfirmationMessage": "Are you sure to delete the category {0}?"
+    "CategoryDeletionConfirmationMessage": "Are you sure to delete the category {0}?",
+    "Permission:Product": "Product",
+    "Menu:Product": "MenuProduct",
+    "Product": "Product",
+    "ProductProductName": "ProductProductName",
+    "ProductSupplierId": "ProductSupplierId",
+    "ProductCategoryId": "ProductCategoryId",
+    "ProductQuantityPerUnit": "ProductQuantityPerUnit",
+    "ProductUnitPrice": "ProductUnitPrice",
+    "ProductUnitsInStock": "ProductUnitsInStock",
+    "ProductUnitsOnOrder": "ProductUnitsOnOrder",
+    "ProductReorderLevel": "ProductReorderLevel",
+    "ProductDiscontinued": "ProductDiscontinued",
+    "ProductCategory": "ProductCategory",
+    "ProductSupplier": "ProductSupplier",
+    "CreateProduct": "CreateProduct",
+    "EditProduct": "EditProduct",
+    "ProductDeletionConfirmationMessage": "Are you sure to delete the product {0}?"
   }
 }
