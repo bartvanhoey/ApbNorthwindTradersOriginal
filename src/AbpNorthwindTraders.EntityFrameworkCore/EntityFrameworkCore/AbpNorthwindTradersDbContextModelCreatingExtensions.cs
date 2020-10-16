@@ -119,6 +119,17 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
        b.Property(e => e.PostalCode).HasMaxLength(SupplierConsts.MaxLengthPostalCode);
        b.Property(e => e.Region).HasMaxLength(SupplierConsts.MaxLengthRegion);
      });
+
+
+      builder.Entity<Category>(b =>
+      {
+        b.ToTable(AbpNorthwindTradersConsts.DbTablePrefix + "Categories", AbpNorthwindTradersConsts.DbSchema);
+        b.ConfigureByConvention();
+        b.Property(e => e.Id).HasColumnName("CategoryID");
+        b.Property(e => e.CategoryName).IsRequired().HasMaxLength(CategoryConsts.MaxLengthCategoryName);
+        b.Property(e => e.Description).HasColumnType("ntext");
+        b.Property(e => e.Picture).HasColumnType("image");
+      });
     }
   }
 }

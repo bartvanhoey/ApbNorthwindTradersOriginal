@@ -13,14 +13,16 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
     private readonly IRepository<Territory, string> _territoryRepository;
     private readonly IRepository<Customer, string> _customerRepository;
     private readonly IRepository<Supplier, int> _supplierRepository;
+    private readonly IRepository<Category, int> _categoryRepository;
 
-    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository)
+    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository, IRepository<Category, int> categoryRepository)
     {
       _employeeRepository = employeeRepository;
       _regionRepository = regionRepository;
       _territoryRepository = territoryRepository;
       _customerRepository = customerRepository;
       _supplierRepository = supplierRepository;
+      _categoryRepository = categoryRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)
@@ -74,6 +76,17 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
           await _supplierRepository.InsertAsync(supplier);
         }
       }
+
+      // Seed Categories
+      if (await _categoryRepository.GetCountAsync() <= 0)
+      {
+        CategoryData.AddCategories();
+        foreach (var category  in CategoryData.Categories.Values)
+        {
+          await _categoryRepository.InsertAsync(category);
+        }
+      }
+
     }
 
 

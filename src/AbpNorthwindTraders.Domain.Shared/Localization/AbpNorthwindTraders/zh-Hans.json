@@ -86,6 +86,15 @@
     "SupplierHomePage": "SupplierHomePage",
     "CreateSupplier": "CreateSupplier",
     "EditSupplier": "EditSupplier",
-    "SupplierDeletionConfirmationMessage": "Are you sure to delete the supplier {0}?"
+    "SupplierDeletionConfirmationMessage": "Are you sure to delete the supplier {0}?",
+    "Permission:Category": "Category",
+    "Menu:Category": "MenuCategory",
+    "Category": "Category",
+    "CategoryCategoryName": "CategoryCategoryName",
+    "CategoryDescription": "CategoryDescription",
+    "CategoryPicture": "CategoryPicture",
+    "CreateCategory": "CreateCategory",
+    "EditCategory": "EditCategory",
+    "CategoryDeletionConfirmationMessage": "Are you sure to delete the category {0}?"
   }
 }

@@ -46,6 +46,7 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
                 options.AddRepository<Territory, TerritoryRepository>();
                 options.AddRepository<Customer, CustomerRepository>();
                 options.AddRepository<Supplier, SupplierRepository>();
+                options.AddRepository<Category, CategoryRepository>();
             });
 
             Configure<AbpDbContextOptions>(options =>
