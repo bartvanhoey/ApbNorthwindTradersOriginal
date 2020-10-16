@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using AbpNorthwindTraders.Domain;
 using AbpNorthwindTraders.Domain.DataSeeder.Data;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
@@ -20,11 +16,11 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
 
     public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository)
     {
-      this._employeeRepository = employeeRepository;
+      _employeeRepository = employeeRepository;
       _regionRepository = regionRepository;
       _territoryRepository = territoryRepository;
-      this._customerRepository = customerRepository;
-      this._supplierRepository = supplierRepository;
+      _customerRepository = customerRepository;
+      _supplierRepository = supplierRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)
