@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Shouldly;
 using Xunit;
 
-namespace AbpNorthwindTraders.Domain.Domain
+namespace AbpNorthwindTraders.Domain
 {
     public class SupplierDomainTests : AbpNorthwindTradersDomainTestBase
     {

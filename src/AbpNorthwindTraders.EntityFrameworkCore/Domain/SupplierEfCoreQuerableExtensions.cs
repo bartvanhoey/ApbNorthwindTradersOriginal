@@ -1,7 +1,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace AbpNorthwindTraders.Domain.Domain
+namespace AbpNorthwindTraders.Domain
 {
     public static class SupplierEfCoreQueryableExtensions
     {

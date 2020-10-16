@@ -14,7 +14,7 @@ namespace AbpNorthwindTraders.Pages.Domain
             // Arrange
 
             // Act
-            var response = await GetResponseAsStringAsync("/Shipper");
+            var response = await GetResponseAsStringAsync("/Order");
 
             // Assert
             response.ShouldNotBeNull();

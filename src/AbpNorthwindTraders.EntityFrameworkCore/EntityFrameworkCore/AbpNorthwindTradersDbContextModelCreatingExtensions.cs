@@ -1,4 +1,4 @@
-using AbpNorthwindTraders.Domain.Domain;
+using AbpNorthwindTraders.Domain;
 using AbpNorthwindTraders.Domain;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
@@ -155,6 +155,43 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
           b.Property(e => e.CompanyName).IsRequired().HasMaxLength(ShipperConsts.MaxLengthCompanyName);
           b.Property(e => e.Phone).HasMaxLength(ShipperConsts.MaxLengthCompanyName);
         });
+
+
+      builder.Entity<Order>(b =>
+          {
+            b.ToTable(AbpNorthwindTradersConsts.DbTablePrefix + "Orders", AbpNorthwindTradersConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.Property(e => e.Id).HasColumnName("OrderID");
+            b.Property(e => e.CustomerId).HasColumnName("CustomerID").HasMaxLength(OrderConsts.MaxLengthCustomerId);
+            b.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+            b.Property(e => e.Freight).HasColumnType("money").HasDefaultValueSql("((0))");
+            b.Property(e => e.OrderDate).HasColumnType("datetime");
+            b.Property(e => e.RequiredDate).HasColumnType("datetime");
+            b.Property(e => e.ShipAddress).HasMaxLength(OrderConsts.MaxLengthShipAddress);
+            b.Property(e => e.ShipCity).HasMaxLength(OrderConsts.MaxLengthShipCity);
+            b.Property(e => e.ShipCountry).HasMaxLength(OrderConsts.MaxLengthShipCountry);
+            b.Property(e => e.ShipName).HasMaxLength(OrderConsts.MaxLengthShipName);
+            b.Property(e => e.ShipPostalCode).HasMaxLength(OrderConsts.MaxLengthShipPostalCode);
+            b.Property(e => e.ShipRegion).HasMaxLength(OrderConsts.MaxLengthShipRegion);
+            b.Property(e => e.ShippedDate).HasColumnType("datetime");
+            b.HasOne(d => d.Shipper).WithMany(p => p.Orders).HasForeignKey(d => d.ShipVia)
+                  .HasConstraintName("FK_Orders_Shippers");
+          });
+
+      builder.Entity<OrderDetail>(b =>
+      {
+        b.ToTable(AbpNorthwindTradersConsts.DbTablePrefix + "OrderDetails", AbpNorthwindTradersConsts.DbSchema);
+        b.ConfigureByConvention();
+        b.HasKey(e => new { e.OrderId, e.ProductId });
+        b.Property(e => e.OrderId).HasColumnName("OrderID");
+        b.Property(e => e.ProductId).HasColumnName("ProductID");
+        b.Property(e => e.Quantity).HasDefaultValueSql("((1))");
+        b.Property(e => e.UnitPrice).HasColumnType("money");
+        b.HasOne(d => d.Order).WithMany(p => p.OrderDetails).HasForeignKey(d => d.OrderId)
+                  .OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_Order_Details_Orders");
+        b.HasOne(d => d.Product).WithMany(p => p.OrderDetails).HasForeignKey(d => d.ProductId)
+                  .OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_Order_Details_Products");
+      });
     }
   }
 }

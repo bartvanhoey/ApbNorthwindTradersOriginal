@@ -2,14 +2,15 @@ using System.Collections.Generic;
 
 namespace AbpNorthwindTraders.Domain.DataSeeder.Data
 {
-    public static class CustomerData
+  public static class CustomerData
+  {
+
+    public static List<Customer> GetCustomers()
     {
-        public readonly static List<Customer> Customers = new List<Customer>();
-        
-        public static void AddCustomers()
-        {
-            Customers.AddRange(new[]
-            {
+      var customers = new List<Customer>();
+
+      customers.AddRange(new[]
+      {
                 new Customer
                 {
                     Id = "ALFKI", Address = "Obere Str. 57", City = "Berlin", CompanyName = "Alfreds Futterkiste",
@@ -602,9 +603,11 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
                     Fax = "(26) 642-7012", Phone = "(26) 642-7012", PostalCode = "01-012"
                 }
             });
-        }
 
-
-
+      return customers;
     }
+
+
+
+  }
 }

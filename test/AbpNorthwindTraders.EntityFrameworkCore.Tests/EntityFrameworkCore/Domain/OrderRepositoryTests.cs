@@ -4,15 +4,15 @@ using AbpNorthwindTraders.Domain;
 using Volo.Abp.Domain.Repositories;
 using Xunit;
 
-namespace AbpNorthwindTraders.EntityFrameworkCore.Domain.Domain
+namespace AbpNorthwindTraders.EntityFrameworkCore.Domain
 {
-    public class SupplierRepositoryTests : AbpNorthwindTradersEntityFrameworkCoreTestBase
+    public class OrderRepositoryTests : AbpNorthwindTradersEntityFrameworkCoreTestBase
     {
-        private readonly ISupplierRepository _supplierRepository;
+        private readonly IOrderRepository _orderRepository;
 
-        public SupplierRepositoryTests()
+        public OrderRepositoryTests()
         {
-            _supplierRepository = GetRequiredService<ISupplierRepository>();
+            _orderRepository = GetRequiredService<IOrderRepository>();
         }
 
         /*

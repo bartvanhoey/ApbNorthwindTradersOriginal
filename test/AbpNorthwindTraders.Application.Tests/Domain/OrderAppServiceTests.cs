@@ -4,13 +4,13 @@ using Xunit;
 
 namespace AbpNorthwindTraders.Domain
 {
-    public class SupplierAppServiceTests : AbpNorthwindTradersApplicationTestBase
+    public class OrderAppServiceTests : AbpNorthwindTradersApplicationTestBase
     {
-        private readonly ISupplierAppService _supplierAppService;
+        private readonly IOrderAppService _orderAppService;
 
-        public SupplierAppServiceTests()
+        public OrderAppServiceTests()
         {
-            _supplierAppService = GetRequiredService<ISupplierAppService>();
+            _orderAppService = GetRequiredService<IOrderAppService>();
         }
 
         /*

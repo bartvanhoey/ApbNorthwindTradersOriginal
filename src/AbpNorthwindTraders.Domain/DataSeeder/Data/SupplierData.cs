@@ -4,11 +4,12 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
 {
   public static class SupplierData
   {
-    public static readonly Dictionary<int, Supplier> Suppliers = new Dictionary<int, Supplier>();
 
-    public static Dictionary<int, Supplier> AddSuppliers()
+    public static Dictionary<int, Supplier> GetSuppliers()
     {
-      Suppliers.Add(1,
+      var suppliers = new Dictionary<int, Supplier>();
+    
+      suppliers.Add(1,
           new Supplier
           {
             CompanyName = "Exotic Liquids",
@@ -21,7 +22,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(171) 555-2222",
             HomePage = ""
           });
-      Suppliers.Add(2,
+      suppliers.Add(2,
           new Supplier
           {
             CompanyName = "New Orleans Cajun Delights",
@@ -35,7 +36,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(100) 555-4822",
             HomePage = "#CAJUN.HTM#"
           });
-      Suppliers.Add(3,
+      suppliers.Add(3,
           new Supplier
           {
             CompanyName = "Grandma Kelly's Homestead",
@@ -49,7 +50,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(313) 555-5735",
             HomePage = ""
           });
-      Suppliers.Add(4,
+      suppliers.Add(4,
           new Supplier
           {
             CompanyName = "Tokyo Traders",
@@ -62,7 +63,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(03) 3555-5011",
             HomePage = ""
           });
-      Suppliers.Add(5,
+      suppliers.Add(5,
           new Supplier
           {
             CompanyName = "Cooperativa de Quesos 'Las Cabras'",
@@ -76,7 +77,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(98) 598 76 54",
             HomePage = ""
           });
-      Suppliers.Add(6,
+      suppliers.Add(6,
           new Supplier
           {
             CompanyName = "Mayumi's",
@@ -90,7 +91,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             HomePage =
                   "Mayumi's (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/mayumi.htm#"
           });
-      Suppliers.Add(7,
+      suppliers.Add(7,
           new Supplier
           {
             CompanyName = "Pavlova, Ltd.",
@@ -104,7 +105,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(03) 444-2343",
             HomePage = ""
           });
-      Suppliers.Add(8,
+      suppliers.Add(8,
           new Supplier
           {
             CompanyName = "Specialty Biscuits, Ltd.",
@@ -117,7 +118,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(161) 555-4448",
             HomePage = ""
           });
-      Suppliers.Add(9,
+      suppliers.Add(9,
           new Supplier
           {
             CompanyName = "PB Knäckebröd AB",
@@ -130,7 +131,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "031-987 65 43",
             HomePage = ""
           });
-      Suppliers.Add(10,
+      suppliers.Add(10,
           new Supplier
           {
             CompanyName = "Refrescos Americanas LTDA",
@@ -143,7 +144,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(11) 555 4640",
             HomePage = ""
           });
-      Suppliers.Add(11,
+      suppliers.Add(11,
           new Supplier
           {
             CompanyName = "Heli Süßwaren GmbH & Co. KG",
@@ -156,7 +157,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(010) 9984510",
             HomePage = ""
           });
-      Suppliers.Add(12,
+      suppliers.Add(12,
           new Supplier
           {
             CompanyName = "Plutzer Lebensmittelgroßmärkte AG",
@@ -170,7 +171,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             HomePage =
                   "Plutzer (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/plutzer.htm#"
           });
-      Suppliers.Add(13,
+      suppliers.Add(13,
           new Supplier
           {
             CompanyName = "Nord-Ost-Fisch Handelsgesellschaft mbH",
@@ -183,7 +184,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(04721) 8713",
             HomePage = ""
           });
-      Suppliers.Add(14,
+      suppliers.Add(14,
           new Supplier
           {
             CompanyName = "Formaggi Fortini s.r.l.",
@@ -196,7 +197,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(0544) 60323",
             HomePage = "#FORMAGGI.HTM#"
           });
-      Suppliers.Add(15,
+      suppliers.Add(15,
           new Supplier
           {
             CompanyName = "Norske Meierier",
@@ -209,7 +210,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(0)2-953010",
             HomePage = ""
           });
-      Suppliers.Add(16,
+      suppliers.Add(16,
           new Supplier
           {
             CompanyName = "Bigfoot Breweries",
@@ -223,7 +224,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(503) 555-9931",
             HomePage = ""
           });
-      Suppliers.Add(17,
+      suppliers.Add(17,
           new Supplier
           {
             CompanyName = "Svensk Sjöföda AB",
@@ -236,7 +237,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "08-123 45 67",
             HomePage = ""
           });
-      Suppliers.Add(18,
+      suppliers.Add(18,
           new Supplier
           {
             CompanyName = "Aux joyeux ecclésiastiques",
@@ -249,7 +250,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(1) 03.83.00.68",
             HomePage = ""
           });
-      Suppliers.Add(19,
+      suppliers.Add(19,
           new Supplier
           {
             CompanyName = "New England Seafood Cannery",
@@ -263,7 +264,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(617) 555-3267",
             HomePage = ""
           });
-      Suppliers.Add(20,
+      suppliers.Add(20,
           new Supplier
           {
             CompanyName = "Leka Trading",
@@ -276,7 +277,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "555-8787",
             HomePage = ""
           });
-      Suppliers.Add(21,
+      suppliers.Add(21,
           new Supplier
           {
             CompanyName = "Lyngbysild",
@@ -289,7 +290,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "43844108",
             HomePage = ""
           });
-      Suppliers.Add(22,
+      suppliers.Add(22,
           new Supplier
           {
             CompanyName = "Zaanse Snoepfabriek",
@@ -302,7 +303,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(12345) 1212",
             HomePage = ""
           });
-      Suppliers.Add(23,
+      suppliers.Add(23,
           new Supplier
           {
             CompanyName = "Karkki Oy",
@@ -315,7 +316,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(953) 10956",
             HomePage = ""
           });
-      Suppliers.Add(24,
+      suppliers.Add(24,
           new Supplier
           {
             CompanyName = "G'day, Mate",
@@ -330,7 +331,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             HomePage =
                   "G'day Mate (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/gdaymate.htm#"
           });
-      Suppliers.Add(25,
+      suppliers.Add(25,
           new Supplier
           {
             CompanyName = "Ma Maison",
@@ -344,7 +345,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(514) 555-9022",
             HomePage = ""
           });
-      Suppliers.Add(26,
+      suppliers.Add(26,
           new Supplier
           {
             CompanyName = "Pasta Buttini s.r.l.",
@@ -357,7 +358,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(089) 6547665",
             HomePage = ""
           });
-      Suppliers.Add(27,
+      suppliers.Add(27,
           new Supplier
           {
             CompanyName = "Escargots Nouveaux",
@@ -370,7 +371,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "85.57.00.07",
             HomePage = ""
           });
-      Suppliers.Add(28,
+      suppliers.Add(28,
           new Supplier
           {
             CompanyName = "Gai pâturage",
@@ -383,7 +384,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "38.76.98.06",
             HomePage = ""
           });
-      Suppliers.Add(29,
+      suppliers.Add(29,
           new Supplier
           {
             CompanyName = "Forêts d'érables",
@@ -397,7 +398,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             Phone = "(514) 555-2955",
             HomePage = ""
           });
-      return Suppliers;
+      return suppliers;
     }
 
   }

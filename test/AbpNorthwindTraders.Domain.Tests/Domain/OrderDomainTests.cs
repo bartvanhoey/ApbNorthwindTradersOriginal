@@ -4,9 +4,9 @@ using Xunit;
 
 namespace AbpNorthwindTraders.Domain
 {
-    public class CategoryDomainTests : AbpNorthwindTradersDomainTestBase
+    public class OrderDomainTests : AbpNorthwindTradersDomainTestBase
     {
-        public CategoryDomainTests()
+        public OrderDomainTests()
         {
         }
 

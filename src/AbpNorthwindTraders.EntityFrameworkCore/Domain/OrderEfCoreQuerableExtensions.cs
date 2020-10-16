@@ -1,11 +1,11 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace AbpNorthwindTraders.Domain.Domain
+namespace AbpNorthwindTraders.Domain
 {
-    public static class CategoryEfCoreQueryableExtensions
+    public static class OrderEfCoreQueryableExtensions
     {
-        public static IQueryable<Category> IncludeDetails(this IQueryable<Category> queryable, bool include = true)
+        public static IQueryable<Order> IncludeDetails(this IQueryable<Order> queryable, bool include = true)
         {
             if (!include)
             {

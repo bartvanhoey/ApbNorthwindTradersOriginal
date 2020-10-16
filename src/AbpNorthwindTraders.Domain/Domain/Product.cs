@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp.MultiTenancy;
 
@@ -8,7 +9,7 @@ namespace AbpNorthwindTraders.Domain
   {
     public Product()
     {
-      //   OrderDetails = new HashSet<OrderDetail>();
+        OrderDetails = new HashSet<OrderDetail>();
     }
     public string ProductName { get; set; }
     public int? SupplierId { get; set; }
@@ -22,7 +23,7 @@ namespace AbpNorthwindTraders.Domain
 
     public Category Category { get; set; }
     public Supplier Supplier { get; set; }
-    // public ICollection<OrderDetail> OrderDetails { get; private set; }
+    public ICollection<OrderDetail> OrderDetails { get; private set; }
     public Guid? TenantId { get; }
 
 

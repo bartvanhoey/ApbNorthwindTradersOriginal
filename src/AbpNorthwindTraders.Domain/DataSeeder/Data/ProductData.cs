@@ -4,16 +4,19 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
 {
   public static class ProductData
   {
-    public static readonly Dictionary<int, Product> Products = new Dictionary<int, Product>();
+   
     public static Dictionary<int, Category> Categories = new Dictionary<int, Category>();
     public static Dictionary<int, Supplier> Suppliers = new Dictionary<int, Supplier>();
 
-    public static void AddProducts()
+    public static Dictionary<int, Product> GetProducts()
     {
-      Categories = CategoryData.AddCategories();
-      Suppliers = SupplierData.AddSuppliers();
+      var products = new Dictionary<int, Product>();
 
-      Products.Add(1,
+      Categories = CategoryData.GetCategories();
+      Suppliers = SupplierData.GetSuppliers();
+      // products = ProductData.GetProducts();
+
+      products.Add(1,
           new Product
           {
             ProductName = "Chai",
@@ -26,7 +29,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 10,
             Discontinued = false
           });
-      Products.Add(2,
+      products.Add(2,
           new Product
           {
             ProductName = "Chang",
@@ -39,7 +42,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(3,
+      products.Add(3,
           new Product
           {
             ProductName = "Aniseed Syrup",
@@ -52,7 +55,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(4,
+      products.Add(4,
           new Product
           {
             ProductName = "Chef Anton's Cajun Seasoning",
@@ -65,7 +68,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(5,
+      products.Add(5,
           new Product
           {
             ProductName = "Chef Anton's Gumbo Mix",
@@ -78,7 +81,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(6,
+      products.Add(6,
           new Product
           {
             ProductName = "Grandma's Boysenberry Spread",
@@ -91,7 +94,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(7,
+      products.Add(7,
           new Product
           {
             ProductName = "Uncle Bob's Organic Dried Pears",
@@ -104,7 +107,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 10,
             Discontinued = false
           });
-      Products.Add(8,
+      products.Add(8,
           new Product
           {
             ProductName = "Northwoods Cranberry Sauce",
@@ -117,7 +120,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(9,
+      products.Add(9,
           new Product
           {
             ProductName = "Mishi Kobe Niku",
@@ -130,7 +133,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(10,
+      products.Add(10,
           new Product
           {
             ProductName = "Ikura",
@@ -143,7 +146,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(11,
+      products.Add(11,
           new Product
           {
             ProductName = "Queso Cabrales",
@@ -156,7 +159,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(12,
+      products.Add(12,
           new Product
           {
             ProductName = "Queso Manchego La Pastora",
@@ -169,7 +172,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(13,
+      products.Add(13,
           new Product
           {
             ProductName = "Konbu",
@@ -182,7 +185,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(14,
+      products.Add(14,
           new Product
           {
             ProductName = "Tofu",
@@ -195,7 +198,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(15,
+      products.Add(15,
           new Product
           {
             ProductName = "Genen Shouyu",
@@ -208,7 +211,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(16,
+      products.Add(16,
           new Product
           {
             ProductName = "Pavlova",
@@ -221,7 +224,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 10,
             Discontinued = false
           });
-      Products.Add(17,
+      products.Add(17,
           new Product
           {
             ProductName = "Alice Mutton",
@@ -234,7 +237,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(18,
+      products.Add(18,
           new Product
           {
             ProductName = "Carnarvon Tigers",
@@ -247,7 +250,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(19,
+      products.Add(19,
           new Product
           {
             ProductName = "Teatime Chocolate Biscuits",
@@ -260,7 +263,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(20,
+      products.Add(20,
           new Product
           {
             ProductName = "Sir Rodney's Marmalade",
@@ -273,7 +276,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(21,
+      products.Add(21,
           new Product
           {
             ProductName = "Sir Rodney's Scones",
@@ -286,7 +289,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(22,
+      products.Add(22,
           new Product
           {
             ProductName = "Gustaf's Knäckebröd",
@@ -299,7 +302,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(23,
+      products.Add(23,
           new Product
           {
             ProductName = "Tunnbröd",
@@ -312,7 +315,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(24,
+      products.Add(24,
           new Product
           {
             ProductName = "Guaraná Fantástica",
@@ -325,7 +328,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(25,
+      products.Add(25,
           new Product
           {
             ProductName = "NuNuCa Nuß-Nougat-Creme",
@@ -338,7 +341,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(26,
+      products.Add(26,
           new Product
           {
             ProductName = "Gumbär Gummibärchen",
@@ -351,7 +354,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(27,
+      products.Add(27,
           new Product
           {
             ProductName = "Schoggi Schokolade",
@@ -364,7 +367,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(28,
+      products.Add(28,
           new Product
           {
             ProductName = "Rössle Sauerkraut",
@@ -377,7 +380,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(29,
+      products.Add(29,
           new Product
           {
             ProductName = "Thüringer Rostbratwurst",
@@ -390,7 +393,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(30,
+      products.Add(30,
           new Product
           {
             ProductName = "Nord-Ost Matjeshering",
@@ -403,7 +406,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(31,
+      products.Add(31,
           new Product
           {
             ProductName = "Gorgonzola Telino",
@@ -416,7 +419,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(32,
+      products.Add(32,
           new Product
           {
             ProductName = "Mascarpone Fabioli",
@@ -429,7 +432,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(33,
+      products.Add(33,
           new Product
           {
             ProductName = "Geitost",
@@ -442,7 +445,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(34,
+      products.Add(34,
           new Product
           {
             ProductName = "Sasquatch Ale",
@@ -455,7 +458,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(35,
+      products.Add(35,
           new Product
           {
             ProductName = "Steeleye Stout",
@@ -468,7 +471,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(36,
+      products.Add(36,
           new Product
           {
             ProductName = "Inlagd Sill",
@@ -481,7 +484,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(37,
+      products.Add(37,
           new Product
           {
             ProductName = "Gravad lax",
@@ -494,7 +497,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(38,
+      products.Add(38,
           new Product
           {
             ProductName = "Côte de Blaye",
@@ -507,7 +510,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(39,
+      products.Add(39,
           new Product
           {
             ProductName = "Chartreuse verte",
@@ -520,7 +523,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(40,
+      products.Add(40,
           new Product
           {
             ProductName = "Boston Crab Meat",
@@ -533,7 +536,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(41,
+      products.Add(41,
           new Product
           {
             ProductName = "Jack's New England Clam Chowder",
@@ -546,7 +549,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 10,
             Discontinued = false
           });
-      Products.Add(42,
+      products.Add(42,
           new Product
           {
             ProductName = "Singaporean Hokkien Fried Mee",
@@ -559,7 +562,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(43,
+      products.Add(43,
           new Product
           {
             ProductName = "Ipoh Coffee",
@@ -572,7 +575,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(44,
+      products.Add(44,
           new Product
           {
             ProductName = "Gula Malacca",
@@ -585,7 +588,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(45,
+      products.Add(45,
           new Product
           {
             ProductName = "Rogede sild",
@@ -598,7 +601,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(46,
+      products.Add(46,
           new Product
           {
             ProductName = "Spegesild",
@@ -611,7 +614,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(47,
+      products.Add(47,
           new Product
           {
             ProductName = "Zaanse koeken",
@@ -624,7 +627,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(48,
+      products.Add(48,
           new Product
           {
             ProductName = "Chocolade",
@@ -637,7 +640,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(49,
+      products.Add(49,
           new Product
           {
             ProductName = "Maxilaku",
@@ -650,7 +653,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(50,
+      products.Add(50,
           new Product
           {
             ProductName = "Valkoinen suklaa",
@@ -663,7 +666,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(51,
+      products.Add(51,
           new Product
           {
             ProductName = "Manjimup Dried Apples",
@@ -676,7 +679,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 10,
             Discontinued = false
           });
-      Products.Add(52,
+      products.Add(52,
           new Product
           {
             ProductName = "Filo Mix",
@@ -689,7 +692,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(53,
+      products.Add(53,
           new Product
           {
             ProductName = "Perth Pasties",
@@ -702,7 +705,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = true
           });
-      Products.Add(54,
+      products.Add(54,
           new Product
           {
             ProductName = "Tourtière",
@@ -715,7 +718,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 10,
             Discontinued = false
           });
-      Products.Add(55,
+      products.Add(55,
           new Product
           {
             ProductName = "Pâté chinois",
@@ -728,7 +731,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(56,
+      products.Add(56,
           new Product
           {
             ProductName = "Gnocchi di nonna Alice",
@@ -741,7 +744,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(57,
+      products.Add(57,
           new Product
           {
             ProductName = "Ravioli Angelo",
@@ -754,7 +757,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(58,
+      products.Add(58,
           new Product
           {
             ProductName = "Escargots de Bourgogne",
@@ -767,7 +770,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(59,
+      products.Add(59,
           new Product
           {
             ProductName = "Raclette Courdavault",
@@ -780,7 +783,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(60,
+      products.Add(60,
           new Product
           {
             ProductName = "Camembert Pierrot",
@@ -793,7 +796,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(61,
+      products.Add(61,
           new Product
           {
             ProductName = "Sirop d'érable",
@@ -806,7 +809,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(62,
+      products.Add(62,
           new Product
           {
             ProductName = "Tarte au sucre",
@@ -819,7 +822,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(63,
+      products.Add(63,
           new Product
           {
             ProductName = "Vegie-spread",
@@ -832,7 +835,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(64,
+      products.Add(64,
           new Product
           {
             ProductName = "Wimmers gute Semmelknödel",
@@ -845,7 +848,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(65,
+      products.Add(65,
           new Product
           {
             ProductName = "Louisiana Fiery Hot Pepper Sauce",
@@ -858,7 +861,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(66,
+      products.Add(66,
           new Product
           {
             ProductName = "Louisiana Hot Spiced Okra",
@@ -871,7 +874,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(67,
+      products.Add(67,
           new Product
           {
             ProductName = "Laughing Lumberjack Lager",
@@ -884,7 +887,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 10,
             Discontinued = false
           });
-      Products.Add(68,
+      products.Add(68,
           new Product
           {
             ProductName = "Scottish Longbreads",
@@ -897,7 +900,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(69,
+      products.Add(69,
           new Product
           {
             ProductName = "Gudbrandsdalsost",
@@ -910,7 +913,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(70,
+      products.Add(70,
           new Product
           {
             ProductName = "Outback Lager",
@@ -923,7 +926,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 30,
             Discontinued = false
           });
-      Products.Add(71,
+      products.Add(71,
           new Product
           {
             ProductName = "Flotemysost",
@@ -936,7 +939,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(72,
+      products.Add(72,
           new Product
           {
             ProductName = "Mozzarella di Giovanni",
@@ -949,7 +952,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 0,
             Discontinued = false
           });
-      Products.Add(73,
+      products.Add(73,
           new Product
           {
             ProductName = "Röd Kaviar",
@@ -962,7 +965,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(74,
+      products.Add(74,
           new Product
           {
             ProductName = "Longlife Tofu",
@@ -975,7 +978,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 5,
             Discontinued = false
           });
-      Products.Add(75,
+      products.Add(75,
           new Product
           {
             ProductName = "Rhönbräu Klosterbier",
@@ -988,7 +991,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 25,
             Discontinued = false
           });
-      Products.Add(76,
+      products.Add(76,
           new Product
           {
             ProductName = "Lakkalikööri",
@@ -1001,7 +1004,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 20,
             Discontinued = false
           });
-      Products.Add(77,
+      products.Add(77,
           new Product
           {
             ProductName = "Original Frankfurter grüne Soße",
@@ -1014,7 +1017,7 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
-      Products.Add(78,
+      products.Add(78,
           new Product
           {
             ProductName = "Coffee",
@@ -1027,6 +1030,9 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
             ReorderLevel = 15,
             Discontinued = false
           });
+
+        return products;
+      
     }
 
 

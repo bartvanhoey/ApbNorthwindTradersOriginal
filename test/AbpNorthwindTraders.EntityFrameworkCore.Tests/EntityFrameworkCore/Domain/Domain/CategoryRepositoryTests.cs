@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using AbpNorthwindTraders.Domain.Domain;
+using AbpNorthwindTraders.Domain;
 using Volo.Abp.Domain.Repositories;
 using Xunit;
 

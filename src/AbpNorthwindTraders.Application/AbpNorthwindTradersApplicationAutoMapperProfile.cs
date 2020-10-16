@@ -1,7 +1,7 @@
 using AbpNorthwindTraders.Domain;
 using AbpNorthwindTraders.Domain.Dtos;
-using AbpNorthwindTraders.Domain.Domain;
-using AbpNorthwindTraders.Domain.Domain.Dtos;
+using AbpNorthwindTraders.Domain;
+using AbpNorthwindTraders.Domain.Dtos;
 using AutoMapper;
 
 namespace AbpNorthwindTraders
@@ -29,6 +29,8 @@ namespace AbpNorthwindTraders
             CreateMap<CreateUpdateProductDto, Product>(MemberList.Source);
             CreateMap<Shipper, ShipperDto>();
             CreateMap<CreateUpdateShipperDto, Shipper>(MemberList.Source);
+            CreateMap<Order, OrderDto>();
+            CreateMap<CreateUpdateOrderDto, Order>(MemberList.Source);
         }
     }
 }

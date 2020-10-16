@@ -1,7 +1,7 @@
 using System;
 using Volo.Abp.Application.Dtos;
 
-namespace AbpNorthwindTraders.Domain.Domain.Dtos
+namespace AbpNorthwindTraders.Domain.Dtos
 {
     [Serializable]
     public class SupplierDto : FullAuditedEntityDto<int>

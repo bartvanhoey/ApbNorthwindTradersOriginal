@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel;
-namespace AbpNorthwindTraders.Domain.Domain.Dtos
+namespace AbpNorthwindTraders.Domain.Dtos
 {
     [Serializable]
     public class CreateUpdateCategoryDto

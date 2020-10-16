@@ -1,9 +1,9 @@
 using System;
-using AbpNorthwindTraders.Domain.Domain.Dtos;
+using AbpNorthwindTraders.Domain.Dtos;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace AbpNorthwindTraders.Domain.Domain
+namespace AbpNorthwindTraders.Domain
 {
     public interface ICategoryAppService :
         ICrudAppService< 

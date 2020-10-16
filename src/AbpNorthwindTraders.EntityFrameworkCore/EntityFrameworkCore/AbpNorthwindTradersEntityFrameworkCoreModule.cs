@@ -1,4 +1,4 @@
-using AbpNorthwindTraders.Domain.Domain;
+using AbpNorthwindTraders.Domain;
 using AbpNorthwindTraders.Domain;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
@@ -49,6 +49,7 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
                 options.AddRepository<Category, CategoryRepository>();
                 options.AddRepository<Product, ProductRepository>();
                 options.AddRepository<Shipper, ShipperRepository>();
+                options.AddRepository<Order, OrderRepository>();
             });
 
             Configure<AbpDbContextOptions>(options =>

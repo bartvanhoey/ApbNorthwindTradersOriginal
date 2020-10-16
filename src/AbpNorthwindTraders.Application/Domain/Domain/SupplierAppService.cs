@@ -1,10 +1,10 @@
 using System;
 using AbpNorthwindTraders.Permissions;
-using AbpNorthwindTraders.Domain.Domain.Dtos;
+using AbpNorthwindTraders.Domain.Dtos;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace AbpNorthwindTraders.Domain.Domain
+namespace AbpNorthwindTraders.Domain
 {
     public class SupplierAppService : CrudAppService<Supplier, SupplierDto, int, PagedAndSortedResultRequestDto, CreateUpdateSupplierDto, CreateUpdateSupplierDto>,
         ISupplierAppService

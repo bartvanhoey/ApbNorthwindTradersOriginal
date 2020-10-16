@@ -16,8 +16,9 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
     private readonly IRepository<Category, int> _categoryRepository;
     private readonly IRepository<Product, int> _productRepository;
     private readonly IRepository<Shipper, int> _shipperRepository;
+    private readonly IRepository<Order, int> _orderRepository;
 
-    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository, IRepository<Category, int> categoryRepository, IRepository<Product, int> productRepository, IRepository<Shipper, int> shipperRepository)
+    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository, IRepository<Category, int> categoryRepository, IRepository<Product, int> productRepository, IRepository<Shipper, int> shipperRepository, IRepository<Order, int> orderRepository)
     {
       _employeeRepository = employeeRepository;
       _regionRepository = regionRepository;
@@ -26,7 +27,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       _supplierRepository = supplierRepository;
       _categoryRepository = categoryRepository;
       _productRepository = productRepository;
-      this._shipperRepository = shipperRepository;
+      _shipperRepository = shipperRepository;
+      _orderRepository = orderRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)
@@ -34,8 +36,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       //  Seed Regions
       if (await _regionRepository.GetCountAsync() <= 0)
       {
-        RegionData.AddRegions();
-        foreach (var region in RegionData.Regions)
+        var regions = RegionData.GetRegions();
+        foreach (var region in regions)
         {
           await _regionRepository.InsertAsync(region);
         }
@@ -54,8 +56,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       // Seed Employees
       if (await _employeeRepository.GetCountAsync() <= 0)
       {
-        EmployeeData.AddEmployees();
-        foreach (var employee in EmployeeData.Employees.Values)
+        var employees = EmployeeData.GetEmployees().Values;
+        foreach (var employee in employees)
         {
           await _employeeRepository.InsertAsync(employee);
         }
@@ -64,8 +66,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       // Seed Customers
       if (await _customerRepository.GetCountAsync() <= 0)
       {
-        CustomerData.AddCustomers();
-        foreach (var customer in CustomerData.Customers)
+        var customers = CustomerData.GetCustomers();
+        foreach (var customer in customers)
         {
           await _customerRepository.InsertAsync(customer);
         }
@@ -74,8 +76,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       // Seed Suppliers
       if (await _supplierRepository.GetCountAsync() <= 0)
       {
-        SupplierData.AddSuppliers();
-        foreach (var supplier in SupplierData.Suppliers.Values)
+        var suppliers = SupplierData.GetSuppliers().Values;
+        foreach (var supplier in suppliers)
         {
           await _supplierRepository.InsertAsync(supplier);
         }
@@ -84,8 +86,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       // Seed Categories
       if (await _categoryRepository.GetCountAsync() <= 0)
       {
-        CategoryData.AddCategories();
-        foreach (var category in CategoryData.Categories.Values)
+        var categories = CategoryData.GetCategories().Values;
+        foreach (var category in categories)
         {
           await _categoryRepository.InsertAsync(category);
         }
@@ -94,8 +96,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       // Seed Products
       if (await _productRepository.GetCountAsync() <= 0)
       {
-        ProductData.AddProducts();
-        foreach (var product in ProductData.Products.Values)
+        var products = ProductData.GetProducts().Values;
+        foreach (var product in products)
         {
           await _productRepository.InsertAsync(product);
         }
@@ -104,10 +106,20 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       // Seed Shippers
       if (await _shipperRepository.GetCountAsync() <= 0)
       {
-        ShipperData.AddShippers();
-        foreach (var shipper in ShipperData.Shippers.Values)
+        var shippers = ShipperData.GetShippers().Values;
+        foreach (var shipper in shippers)
         {
           await _shipperRepository.InsertAsync(shipper);
+        }
+      }
+
+       // Seed Orders
+      if (await _orderRepository.GetCountAsync() <= 0)
+      {
+        var orders = OrderData.GetOrders();
+        foreach (var order in orders)
+        {
+          await _orderRepository.InsertAsync(order);
         }
       }
 

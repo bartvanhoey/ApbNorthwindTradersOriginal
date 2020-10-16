@@ -4,17 +4,19 @@ namespace AbpNorthwindTraders.Domain.DataSeeder.Data
 {
   public static class RegionData
   {
-    public static readonly List<Region> Regions = new List<Region>();
 
-    public static void AddRegions()
+    public static List<Region> GetRegions()
     {
-      Regions.AddRange(new[]
+      var regions = new List<Region>();
+      regions.AddRange(new[]
       {
                 new Region {Id = 1, RegionDescription = "Eastern"},
                 new Region {Id = 2, RegionDescription = "Western"},
                 new Region {Id = 3, RegionDescription = "Northern"},
                 new Region {Id = 4, RegionDescription = "Southern"}
             });
+
+      return regions;
     }
   }
 }

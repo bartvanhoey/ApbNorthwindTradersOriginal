@@ -5,13 +5,13 @@ using Volo.Abp.Application.Services;
 
 namespace AbpNorthwindTraders.Domain
 {
-    public interface ISupplierAppService :
+    public interface IOrderAppService :
         ICrudAppService< 
-            SupplierDto, 
+            OrderDto, 
             int, 
             PagedAndSortedResultRequestDto,
-            CreateUpdateSupplierDto,
-            CreateUpdateSupplierDto>
+            CreateUpdateOrderDto,
+            CreateUpdateOrderDto>
     {
 
     }
