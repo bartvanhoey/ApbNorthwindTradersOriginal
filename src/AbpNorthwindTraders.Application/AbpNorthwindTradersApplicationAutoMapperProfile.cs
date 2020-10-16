@@ -17,6 +17,8 @@ namespace AbpNorthwindTraders
             CreateMap<CreateUpdateRegionDto, Region>(MemberList.Source);
             CreateMap<Territory, TerritoryDto>();
             CreateMap<CreateUpdateTerritoryDto, Territory>(MemberList.Source);
+            CreateMap<Customer, CustomerDto>();
+            CreateMap<CreateUpdateCustomerDto, Customer>(MemberList.Source);
         }
     }
 }

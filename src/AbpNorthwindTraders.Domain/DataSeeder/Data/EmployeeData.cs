@@ -1,37 +1,14 @@
-using System;
 using System.Collections.Generic;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
-using AbpNorthwindTraders.Domain;
-using Volo.Abp.Data;
-using Volo.Abp.DependencyInjection;
-using Volo.Abp.Domain.Repositories;
 
-namespace AbpNorthwindTraders.DataSeeder
+namespace AbpNorthwindTraders.Domain.DataSeeder
 {
-    public class EmployeesSeeder : IDataSeedContributor, ITransientDependency
+    public static class EmployeeData
     {
-        private readonly IRepository<Employee, int> _repository;
-        public readonly Dictionary<int, Employee> Employees = new Dictionary<int, Employee>();
+        public readonly static Dictionary<int, Employee> Employees = new Dictionary<int, Employee>();
 
-        public EmployeesSeeder(IRepository<Employee, int> repository)
-        {
-            _repository = repository;
-        }
-
-        public async Task SeedAsync(DataSeedContext context)
-        {
-            if (await _repository.GetCountAsync() <= 0)
-            {
-                AddEmployees();
-                foreach (var employee in Employees.Values)
-                {
-                    await _repository.InsertAsync(employee);
-                }
-            }
-        }
-        
-        private void AddEmployees()
+        public static void AddEmployees()
         {
             Employees.Add(2,
                 new Employee
@@ -332,6 +309,6 @@ namespace AbpNorthwindTraders.DataSeeder
                 .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                 .ToArray();
         }
-        
+ 
     }
 }

@@ -52,6 +52,23 @@
     "TerritoryEmployeeTerritories": "TerritoryEmployeeTerritories",
     "CreateTerritory": "CreateTerritory",
     "EditTerritory": "EditTerritory",
-    "TerritoryDeletionConfirmationMessage": "Are you sure to delete the territory {0}?"
+    "TerritoryDeletionConfirmationMessage": "Are you sure to delete the territory {0}?",
+    "Permission:Customer": "Customer",
+    "Menu:Customer": "MenuCustomer",
+    "Customer": "Customer",
+    "CustomerId": "CustomerId",
+    "CustomerCompanyName": "CustomerCompanyName",
+    "CustomerContactName": "CustomerContactName",
+    "CustomerContactTitle": "CustomerContactTitle",
+    "CustomerAddress": "CustomerAddress",
+    "CustomerCity": "CustomerCity",
+    "CustomerRegion": "CustomerRegion",
+    "CustomerPostalCode": "CustomerPostalCode",
+    "CustomerCountry": "CustomerCountry",
+    "CustomerPhone": "CustomerPhone",
+    "CustomerFax": "CustomerFax",
+    "CreateCustomer": "CreateCustomer",
+    "EditCustomer": "EditCustomer",
+    "CustomerDeletionConfirmationMessage": "Are you sure to delete the customer {0}?"
   }
 }

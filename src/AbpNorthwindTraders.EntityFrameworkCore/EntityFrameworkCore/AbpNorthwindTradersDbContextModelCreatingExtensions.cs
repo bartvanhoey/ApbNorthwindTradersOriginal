@@ -83,6 +83,23 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
                 b.HasOne(d => d.Territory).WithMany(p => p.EmployeeTerritories).HasForeignKey(d => d.TerritoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_EmployeeTerritories_Territories");
             });
+
+          builder.Entity<Customer>(b =>
+            {
+                b.ToTable(AbpNorthwindTradersConsts.DbTablePrefix + "Customers", AbpNorthwindTradersConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(e => e.Id).HasColumnName("CustomerID").HasMaxLength(CustomerConsts.MaxLengthId).ValueGeneratedNever();
+                b.Property(e => e.Address).HasMaxLength(CustomerConsts.MaxLengthAddress);
+                b.Property(e => e.City).HasMaxLength(CustomerConsts.MaxLengthCity);
+                b.Property(e => e.CompanyName).IsRequired().HasMaxLength(CustomerConsts.MaxLengthCompanyName);
+                b.Property(e => e.ContactName).HasMaxLength(CustomerConsts.MaxLengthContactName);
+                b.Property(e => e.ContactTitle).HasMaxLength(CustomerConsts.MaxLengthContactTitle);
+                b.Property(e => e.Country).HasMaxLength(CustomerConsts.MaxLengthCountry);
+                b.Property(e => e.Fax).HasMaxLength(CustomerConsts.MaxLengthFax);
+                b.Property(e => e.Phone).HasMaxLength(CustomerConsts.MaxLengthPhone);
+                b.Property(e => e.PostalCode).HasMaxLength(CustomerConsts.MaxLengthPostalCode);
+                b.Property(e => e.Region).HasMaxLength(CustomerConsts.MaxLengthRegion);
+            });
         }
     }
 }

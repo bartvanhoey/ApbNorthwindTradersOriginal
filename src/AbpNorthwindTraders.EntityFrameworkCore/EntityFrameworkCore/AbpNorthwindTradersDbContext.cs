@@ -29,6 +29,7 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Region> Regions { get; set; }
         public DbSet<Territory> Territories { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public AbpNorthwindTradersDbContext(DbContextOptions<AbpNorthwindTradersDbContext> options)
             : base(options)

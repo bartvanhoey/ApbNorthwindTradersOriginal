@@ -1,36 +1,14 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Volo.Abp.Data;
-using Volo.Abp.DependencyInjection;
-using Volo.Abp.Domain.Repositories;
 
-namespace AbpNorthwindTraders.Domain.DataSeeder
+namespace AbpNorthwindTraders.Domain.DataSeeder.Data
 {
-   public class TerritoriesSeeder : IDataSeedContributor, ITransientDependency
+    public static class TerritoryData
     {
-        private readonly IRepository<Territory, string> _repository;
-        private readonly List<Territory> _territories = new List<Territory>();
-
-        public TerritoriesSeeder(IRepository<Territory, string> repository)
+        public readonly static List<Territory> Territories = new List<Territory>();
+        
+        public  static void AddTerritories()
         {
-            _repository = repository;
-            AddTerritories();
-        }
-
-        public async Task SeedAsync(DataSeedContext context)
-        {
-            if (await _repository.GetCountAsync() <= 0)
-            {
-                foreach (var territory in _territories)
-                {
-                    await _repository.InsertAsync(territory);
-                }
-            }
-        }
-
-        private void AddTerritories()
-        {
-            _territories.AddRange(new[]
+            Territories.AddRange(new[]
             {
                 new Territory {Id = "01581", RegionId = 1, TerritoryDescription = "Westboro"},
                 new Territory {Id = "01730", RegionId = 1, TerritoryDescription = "Bedford"},
@@ -87,5 +65,6 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
                 new Territory {Id = "98104", RegionId = 2, TerritoryDescription = "Seattle"}
             });
         }
+
     }
 }
