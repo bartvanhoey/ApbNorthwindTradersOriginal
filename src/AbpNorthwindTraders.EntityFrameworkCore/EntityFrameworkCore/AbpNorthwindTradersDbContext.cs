@@ -6,6 +6,7 @@ using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Identity;
 using Volo.Abp.Users.EntityFrameworkCore;
 using AbpNorthwindTraders.Domain;
+using AbpNorthwindTraders.Domain.Domain;
 
 namespace AbpNorthwindTraders.EntityFrameworkCore
 {
@@ -30,6 +31,7 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
         public DbSet<Region> Regions { get; set; }
         public DbSet<Territory> Territories { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
 
         public AbpNorthwindTradersDbContext(DbContextOptions<AbpNorthwindTradersDbContext> options)
             : base(options)

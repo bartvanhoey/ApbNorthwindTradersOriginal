@@ -16,13 +16,15 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
     private readonly IRepository<Region, int> _regionRepository;
     private readonly IRepository<Territory, string> _territoryRepository;
     private readonly IRepository<Customer, string> _customerRepository;
+    private readonly IRepository<Supplier, int> _supplierRepository;
 
-    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository)
+    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository)
     {
       this._employeeRepository = employeeRepository;
       _regionRepository = regionRepository;
       _territoryRepository = territoryRepository;
       this._customerRepository = customerRepository;
+      this._supplierRepository = supplierRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)
@@ -64,6 +66,16 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
         foreach (var customer in CustomerData.Customers)
         {
           await _customerRepository.InsertAsync(customer);
+        }
+      }
+
+      // Seed Suppliers
+      if (await _supplierRepository.GetCountAsync() <= 0)
+      {
+        SupplierData.AddSuppliers();
+        foreach (var supplier in SupplierData.Suppliers.Values)
+        {
+          await _supplierRepository.InsertAsync(supplier);
         }
       }
     }

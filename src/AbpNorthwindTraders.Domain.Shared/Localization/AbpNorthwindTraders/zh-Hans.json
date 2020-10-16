@@ -69,6 +69,23 @@
     "CustomerFax": "CustomerFax",
     "CreateCustomer": "CreateCustomer",
     "EditCustomer": "EditCustomer",
-    "CustomerDeletionConfirmationMessage": "Are you sure to delete the customer {0}?"
+    "CustomerDeletionConfirmationMessage": "Are you sure to delete the customer {0}?",
+    "Permission:Supplier": "Supplier",
+    "Menu:Supplier": "MenuSupplier",
+    "Supplier": "Supplier",
+    "SupplierCompanyName": "SupplierCompanyName",
+    "SupplierContactName": "SupplierContactName",
+    "SupplierContactTitle": "SupplierContactTitle",
+    "SupplierAddress": "SupplierAddress",
+    "SupplierCity": "SupplierCity",
+    "SupplierRegion": "SupplierRegion",
+    "SupplierPostalCode": "SupplierPostalCode",
+    "SupplierCountry": "SupplierCountry",
+    "SupplierPhone": "SupplierPhone",
+    "SupplierFax": "SupplierFax",
+    "SupplierHomePage": "SupplierHomePage",
+    "CreateSupplier": "CreateSupplier",
+    "EditSupplier": "EditSupplier",
+    "SupplierDeletionConfirmationMessage": "Are you sure to delete the supplier {0}?"
   }
 }
