@@ -47,6 +47,11 @@ namespace AbpNorthwindTraders.Permissions
             productPermission.AddChild(AbpNorthwindTradersPermissions.Product.Create, L("Permission:Create"));
             productPermission.AddChild(AbpNorthwindTradersPermissions.Product.Update, L("Permission:Update"));
             productPermission.AddChild(AbpNorthwindTradersPermissions.Product.Delete, L("Permission:Delete"));
+
+            var shipperPermission = myGroup.AddPermission(AbpNorthwindTradersPermissions.Shipper.Default, L("Permission:Shipper"));
+            shipperPermission.AddChild(AbpNorthwindTradersPermissions.Shipper.Create, L("Permission:Create"));
+            shipperPermission.AddChild(AbpNorthwindTradersPermissions.Shipper.Update, L("Permission:Update"));
+            shipperPermission.AddChild(AbpNorthwindTradersPermissions.Shipper.Delete, L("Permission:Delete"));
         }
 
         private static LocalizableString L(string name)

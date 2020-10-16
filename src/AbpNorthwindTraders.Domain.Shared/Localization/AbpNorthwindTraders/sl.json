@@ -112,6 +112,15 @@
     "ProductSupplier": "ProductSupplier",
     "CreateProduct": "CreateProduct",
     "EditProduct": "EditProduct",
-    "ProductDeletionConfirmationMessage": "Are you sure to delete the product {0}?"
+    "ProductDeletionConfirmationMessage": "Are you sure to delete the product {0}?",
+    "Permission:Shipper": "Shipper",
+    "Menu:Shipper": "MenuShipper",
+    "Shipper": "Shipper",
+    "ShipperCompanyName": "ShipperCompanyName",
+    "ShipperPhone": "ShipperPhone",
+    "ShipperTenantId": "ShipperTenantId",
+    "CreateShipper": "CreateShipper",
+    "EditShipper": "EditShipper",
+    "ShipperDeletionConfirmationMessage": "Are you sure to delete the shipper {0}?"
   }
 }

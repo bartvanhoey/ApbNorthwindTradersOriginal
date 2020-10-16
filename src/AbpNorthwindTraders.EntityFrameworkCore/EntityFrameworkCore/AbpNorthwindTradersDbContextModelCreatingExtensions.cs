@@ -145,6 +145,16 @@ namespace AbpNorthwindTraders.EntityFrameworkCore
         b.Property(e => e.UnitsInStock).HasDefaultValueSql("((0))");
         b.Property(e => e.UnitsOnOrder).HasDefaultValueSql("((0))");
       });
+
+
+      builder.Entity<Shipper>(b =>
+        {
+          b.ToTable(AbpNorthwindTradersConsts.DbTablePrefix + "Shippers", AbpNorthwindTradersConsts.DbSchema);
+          b.ConfigureByConvention();
+          b.Property(e => e.Id).HasColumnName("ShipperID");
+          b.Property(e => e.CompanyName).IsRequired().HasMaxLength(ShipperConsts.MaxLengthCompanyName);
+          b.Property(e => e.Phone).HasMaxLength(ShipperConsts.MaxLengthCompanyName);
+        });
     }
   }
 }

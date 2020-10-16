@@ -15,8 +15,9 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
     private readonly IRepository<Supplier, int> _supplierRepository;
     private readonly IRepository<Category, int> _categoryRepository;
     private readonly IRepository<Product, int> _productRepository;
+    private readonly IRepository<Shipper, int> _shipperRepository;
 
-    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository, IRepository<Category, int> categoryRepository, IRepository<Product, int> productRepository)
+    public Seeder(IRepository<Employee, int> employeeRepository, IRepository<Region, int> regionRepository, IRepository<Territory, string> territoryRepository, IRepository<Customer, string> customerRepository, IRepository<Supplier, int> supplierRepository, IRepository<Category, int> categoryRepository, IRepository<Product, int> productRepository, IRepository<Shipper, int> shipperRepository)
     {
       _employeeRepository = employeeRepository;
       _regionRepository = regionRepository;
@@ -24,7 +25,8 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
       _customerRepository = customerRepository;
       _supplierRepository = supplierRepository;
       _categoryRepository = categoryRepository;
-      this._productRepository = productRepository;
+      _productRepository = productRepository;
+      this._shipperRepository = shipperRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)
@@ -96,6 +98,16 @@ namespace AbpNorthwindTraders.Domain.DataSeeder
         foreach (var product in ProductData.Products.Values)
         {
           await _productRepository.InsertAsync(product);
+        }
+      }
+
+      // Seed Shippers
+      if (await _shipperRepository.GetCountAsync() <= 0)
+      {
+        ShipperData.AddShippers();
+        foreach (var shipper in ShipperData.Shippers.Values)
+        {
+          await _shipperRepository.InsertAsync(shipper);
         }
       }
 
